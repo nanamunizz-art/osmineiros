@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os Mineiros</title>
+  <style>
+    /* Paleta */
+    :root {
+      --vermelho: #B02E0C;
+      --laranja: #D95F18;
+      --amarelo: #ffd384;
+      --marrom: #8C6E54;
+      --branco: #faf5ea;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--branco);
+      color: #333;
+    }
+    header {
+      background: var(--vermelho);
+      color: var(--branco);
+      text-align: center;
+      padding: 2rem;
+    }
+    nav {
+      background: var(--marrom);
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: var(--branco);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section.active {
+      display: block;
+    }
+    h2 { color: var(--vermelho); }
+
+    /* Cards de matérias */
+    .materiais {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--amarelo);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--vermelho);
+      color: var(--branco);
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    /* Quem somos */
+    .grupo {
+      margin-bottom: 2rem;
+    }
+    .fotos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .pessoa {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .pessoa img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--vermelho);
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: var(--amarelo);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .newsletter input[type="email"] {
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+      width: 250px;
+    }
+    .newsletter button {
+      padding: 0.7rem 1.2rem;
+      border: none;
+      background: var(--vermelho);
+      color: var(--branco);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .newsletter button:hover { background: var(--laranja); }
+
+    footer {
+      background: var(--marrom);
+      color: var(--branco);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Os Mineiros ✨</h1>
+    <p>Levando a sala de aula além, com leveza e união!</p>
+  </header>
+
+  <nav>
+    <a onclick="showTab('quem-somos')">Quem somos</a>
+    <a onclick="showTab('materiais')">Materiais</a>
+    <a onclick="showTab('comunidade')">Comunidade</a>
+    <a onclick="showTab('contato')">Contato</a>
+  </nav>
+
+  <!-- Quem somos -->
+  <section id="quem-somos" class="active">
+    <h2>Quem somos</h2>
+    <p>
+      Somos Os Mineiros, um grupo que nasceu de um trabalho gastronômico e decidiu continuar para além da sala de aula. 
+      Somos de cantos diferentes do Brasil — Rondônia, Maranhão, Rio de Janeiro, Paraná e Pernambuco — e nos unimos para provar que diversidade é nossa maior riqueza.
+      Aqui, misturamos sotaques, ideias e jeitos de ser para criar conteúdos criativos, ajudar estudantes e fortalecer a comunidade escolar, sempre com leveza, união e aquele tempero brasileiro que não pode faltar.
+    </p>
+
+    <div class="grupo">
+      <h3>👩‍🎓 Do Paraná</h3>
+      <div class="fotos">
+        <div class="pessoa"><img src="ana.jpg"><p>Ana Muniz - Rondônia</p></div>
+        <div class="pessoa"><img src="geovana.jpg"><p>Geovana - Paraná</p></div>
+        <div class="pessoa"><img src="gabrielly.jpg"><p>Gabrielly - Paraná</p></div>
+        <div class="pessoa"><img src="grazielly.jpg"><p>Grazielly - Paraná</p></div>
+        <div class="pessoa"><img src="joao.jpg"><p>João Pedro - Paraná</p></div>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <h3>🌎 Brasil afora</h3>
+      <div class="fotos">
+        <div class="pessoa"><img src="kaua.jpg"><p>Kauã - Rio de Janeiro</p></div>
+        <div class="pessoa"><img src="matheus.jpg"><p>Matheus - Maranhão</p></div>
+        <div class="pessoa"><img src="jonatas.jpg"><p>Jônatas - Rondônia</p></div>
+        <div class="pessoa"><img src="david.jpg"><p>David - Pernambuco</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materiais -->
+  <section id="materiais">
+    <h2>Materiais</h2>
+    <div class="materiais">
+      <div class="card"><h3>📐 Matemática</h3><p>Fórmulas e exercícios.</p><a href="materiais/matematica.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>✍️ Português</h3><p>Redação e gramática.</p><a href="materiais/portugues.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>🇬🇧 Inglês</h3><p>Vocabulário e leitura.</p><a href="materiais/ingles.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>📖 História</h3><p>Brasil e mundo.</p><a href="materiais/historia.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>🌍 Geografia</h3><p>Biomas e globalização.</p><a href="materiais/geografia.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>🤖 Robótica</h3><p>Arduino e projetos.</p><a href="materiais/robotica.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>💻 Informática</h3><p>Office e HTML.</p><a href="materiais/informatica.pdf" target="_blank">Ver material</a></div>
+      <div class="card"><h3>🔬 Química</h3><p>Tabela periódica e orgânica.</p><a href="materiais/quimica.pdf" target="_blank">Ver material</a></div>
+    </div>
+  </section>
+
+  <!-- Comunidade -->
+  <section id="comunidade">
+    <h2>Comunidade</h2>
+    <p>Entre na nossa comunidade no <b>Discord</b> de professores e alunos!</p>
+    <p>Compartilharemos matérias, conteúdos de provas, avisos e divulgações do Fazenda Velha.<br>
+    Também teremos canais para os alunos jogarem juntos 🎮 (Minecraft, Roblox, FreeFire...)</p>
+    <p><a href="https://discord.gg/seu-link" target="_blank">👉 Entrar no Discord</a></p>
+
+    <div class="newsletter">
+      <h3>📩 Newsletter</h3>
+      <p>Receba resumos e dicas no seu e-mail da escola.<br>
+      <em>(Cadastre com seu email .escola.pr.gov.br)</em></p>
+      <form>
+        <input type="email" placeholder="Digite seu email escolar">
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Tem alguma ideia para nos ajudar, aviso que queira que divulguemos, projeto que gostaria de um apoio, ou algo que gostaria de nos contar?</p>
+    <p>Podem enviar no nosso Instagram:<br>
+      <a href="https://instagram.com/osmineiros2e" target="_blank">@osmineiros2e</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Os Mineiros - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+    }
+  </script>
+</body>
+</html>
